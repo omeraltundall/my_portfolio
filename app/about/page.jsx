@@ -31,7 +31,7 @@ const AboutPage = () => {
           <div className="flex flex-col gap-12 justify-center">
             {/* BIOGRAPHY IMAGE */}
             <Image
-              src="/my_photo2.png"
+              src="/my_photo.png"
               alt=""
               width={112}
               height={112}
