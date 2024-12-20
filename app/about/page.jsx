@@ -7,8 +7,6 @@ import { useRef } from "react";
 import { Ballet } from "next/font/google";
 import { skills } from "@/constants";
 
-import Typewriter from "typewriter-effect";
-
 const ballet = Ballet({
   subsets: ["latin-ext"],
 });
@@ -54,21 +52,7 @@ const AboutPage = () => {
             {/* BIOGRAPHY TITLE */}
             <h1 className="font-bold text-2xl">BIOGRAPHY</h1>
             {/* BIOGRAPHY DESC */}
-            <div className="text-xl">
-              <Typewriter
-                options={{
-                  delay: 20,
-                }}
-                onInit={(typewriter) => {
-                  typewriter
-                    .typeString(
-                      "Hello, I'm Ömer. I've been working in front end web development for 2 years."
-                    )
-                    .pauseFor(2000)
-                    .start();
-                }}
-              />
-            </div>
+            <p className="text-xl">Hello, I'm Ömer. I've been working in front end web development for 2 years.</p>
             {/* BIOGRAPHY SIGN*/}
             <div className="self-end">
               <p className={`${ballet.className} text-2xl`}>OmerAltundal</p>
