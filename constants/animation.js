@@ -34,7 +34,7 @@ const listVariants = {
     x: 0,
     transition: {
       when: "beforeChildren",
-      staggerChildren: 0.2,
+      staggerChildren: 0.35,
     },
   },
 };

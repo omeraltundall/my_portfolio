@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Home",
+  title: "Omer Altundal",
   description: "Omer Altundal's Portfolio Website",
 };
 
@@ -23,13 +23,12 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="text-black w-screen h-screen bg-gradient-to-b from-blue-50 to-red-100">
+        {/* <TransitionProvider>{children}</TransitionProvider> */}
+        <div className="w-screen h-screen bg-gradient-to-b from-blue-100 to-red-100">
           <div className="h-24">
             <Navbar />
           </div>
-          <div className="h-[calc(100vh-6rem)]">
-            {children}
-          </div>
+          <div className="h-[calc(100vh-6rem)] text-black">{children}</div>
         </div>
       </body>
     </html>

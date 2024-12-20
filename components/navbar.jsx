@@ -17,7 +17,7 @@ import {
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="h-full flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 text-xl">
+    <div className="h-full flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 text-xl text-black">
       <div className="hidden md:flex gap-4 w-1/3">
         {navLinks.map((navLink) => (
           <NavLink link={navLink} key={navLink.title} />
@@ -27,7 +27,7 @@ export default function Navbar() {
       <div className="md:hidden lg:flex w-1/3  justify-center items-center">
         <Link
           href="/"
-          className="text-sm bg-black rounded-md p-1 font-semibold flex items-center justify-center"
+          className="text-sm bg-gradient-to-l from-slate-950 to-slate-800 rounded-md p-1 font-semibold flex items-center justify-center"
         >
           <span className="text-white">Omer</span>
           <span className="ml-1 w-16 h-8 rounded bg-white flex items-center justify-center">
@@ -37,7 +37,7 @@ export default function Navbar() {
       </div>
       <div className="hidden md:flex items-center justify-end gap-4 w-1/3">
         {socialLinks.map((socialLink) => (
-          <Link href={socialLink.url} key={socialLink.name}>
+          <Link href={socialLink.url} key={socialLink.name} target="_blank">
             <Image
               src={socialLink.imageUrl}
               alt={socialLink.name}
@@ -51,6 +51,7 @@ export default function Navbar() {
       <div className="md:hidden">
         {/* MENU BUTTON */}
         <button
+          aria-label="burger-button"
           className="w-10 h-8 flex flex-col justify-between z-50 relative"
           onClick={() => setIsOpen((prev) => !prev)}
         >
@@ -76,7 +77,7 @@ export default function Navbar() {
             variants={listVariants}
             initial="closed"
             animate="opened"
-            className="absolute top-0 left-0 w-screen h-screen bg-black text-white flex flex-col items-center justify-center gap-8 text-4xl z-40"
+            className="absolute top-0 left-0 w-screen h-screen bg-gradient-to-l from-slate-950 to-slate-800 text-white flex flex-col items-center justify-center gap-8 text-4xl z-40"
           >
             {navLinks.map((navLink) => (
               <motion.div
@@ -84,9 +85,7 @@ export default function Navbar() {
                 className=""
                 key={navLink.title}
               >
-                <Link href={navLink.url}>
-                  {navLink.title}
-                </Link>
+                <Link href={navLink.url}>{navLink.title}</Link>
               </motion.div>
             ))}
           </motion.div>
