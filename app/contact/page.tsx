@@ -21,7 +21,6 @@ import { sendMessageWithEmail } from "@/lib/mail";
 
 
 const ContactPage = () => {
-  const [success, setSuccess] = useState<boolean | undefined>(false);
   const [isPending, startTransition] = useTransition();
   const text = "Say Hello";
 
@@ -35,13 +34,11 @@ const ContactPage = () => {
   });
 
   const onSubmit = (values: z.infer<typeof SendMailSchema>) => {
-    setSuccess(false);
     const mes = `Mail From:${values.email} \nMessage: ${values.message}`
-    console.log(mes, success)
+    console.log(mes)
     startTransition(() => {
       sendMessageWithEmail(values)
       form.reset()
-      setSuccess(true)
     })
   };
 
