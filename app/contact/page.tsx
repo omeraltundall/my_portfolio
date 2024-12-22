@@ -37,7 +37,7 @@ const ContactPage = () => {
   const onSubmit = (values: z.infer<typeof SendMailSchema>) => {
     setSuccess(false);
     const mes = `Mail From:${values.email} \nMessage: ${values.message}`
-    console.log(mes)
+    console.log(mes, success)
     startTransition(() => {
       sendMessageWithEmail(values)
       form.reset()
