@@ -12,7 +12,7 @@ export const sendMessageWithEmail = async (
   values: SendMessageWithEmailProps
 ) => {
   await resend.emails.send({
-    from: "Acme <onboarding@resend.dev>",
+    from: "onboarding@resend.dev",
     to: "altundaomer01.99@gmail.com",
     subject: "Sending Message",
     html: `
