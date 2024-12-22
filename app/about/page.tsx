@@ -52,7 +52,7 @@ const AboutPage = () => {
             {/* BIOGRAPHY TITLE */}
             <h1 className="font-bold text-2xl">BIOGRAPHY</h1>
             {/* BIOGRAPHY DESC */}
-            <p className="text-xl">Hello, I&apos;m Ömer. I've been working in front end web development for 2 years.</p>
+            <p className="text-xl">Hello, I&apos;m Ömer. I&apos;ve been working in front end web development for 2 years.</p>
             {/* BIOGRAPHY SIGN*/}
             <div className="self-end">
               <p className={`${ballet.className} text-2xl`}>OmerAltundal</p>
