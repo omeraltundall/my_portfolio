@@ -22,7 +22,7 @@ const buttonVariants = cva(
         black: "rounded-lg ring-1 ring-black bg-black text-white hover:bg-white hover:text-black"
       },
       size: {
-        special: "p-4 text-base",
+        special: "p-2 md:p-4 text-sm md:text-base",
         default: "h-9 px-4 py-2",
         sm: "h-8 rounded-md px-3 text-xs",
         lg: "h-10 rounded-md px-8",

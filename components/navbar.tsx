@@ -24,7 +24,7 @@ export default function Navbar() {
         ))}
       </div>
       {/* LOGO */}
-      <div className="md:hidden lg:flex md:w-1/2 sm:w-1/3  justify-center items-center">
+      <div className="md:hidden lg:flex md:w-1/2 sm:w-1/3  justify-center items-center z-10">
         <Link
           href="/"
           className="text-sm bg-gradient-to-l from-slate-950 to-slate-800 rounded-md p-1 font-semibold flex items-center justify-center"

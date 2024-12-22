@@ -65,9 +65,9 @@ const ContactPage = () => {
       animate={{ y: "0%" }}
       transition={{ duration: 1 }}
     >
-      <div className="h-full flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48">
+      <div className="h-full flex lg:items-center lg:justify-center flex-col px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48">
         {/* TEXT CONTAINER */}
-        <div className="h-1/2 lg:h-full lg:w-1/2 flex items-center justify-center text-6xl">
+        <div className="h-1/2 lg:h-full flex items-center justify-center text-6xl">
           <div>
             {text.split("").map((letter, index) => (
               <motion.span
@@ -119,7 +119,7 @@ const ContactPage = () => {
             </span>
           )}
         </form> */}
-        <div className="h-auto lg:h-full lg:w-1/2 bg-red-50 rounded-xl text-xl flex flex-col gap-8 justify-center p-24">
+        <div className="h-auto lg:h-full lg:w-4/6 bg-red-50 rounded-xl text-xl flex flex-col gap-8 justify-center p-12">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(() => {})} className="space-y-8">
               <FormField
