@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "motion/react";
-import { useState, useTransition } from "react";
+import { useTransition } from "react";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -19,11 +19,9 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { sendMessageWithEmail } from "@/lib/mail";
 
-
 const ContactPage = () => {
   const [isPending, startTransition] = useTransition();
   const text = "Say Hello";
-
 
   const form = useForm<z.infer<typeof SendMailSchema>>({
     resolver: zodResolver(SendMailSchema),
@@ -34,14 +32,13 @@ const ContactPage = () => {
   });
 
   const onSubmit = (values: z.infer<typeof SendMailSchema>) => {
-    const mes = `Mail From:${values.email} \nMessage: ${values.message}`
-    console.log(mes)
+    const mes = `Mail From:${values.email} \nMessage: ${values.message}`;
+    console.log(mes);
     startTransition(() => {
-      sendMessageWithEmail(values)
-      form.reset()
-    })
+      sendMessageWithEmail(values);
+      form.reset();
+    });
   };
-
 
   return (
     <motion.div
@@ -87,7 +84,7 @@ const ContactPage = () => {
                         rows={6}
                         {...field}
                         placeholder="Write your message here"
-                        disabled= {isPending}
+                        disabled={isPending}
                       />
                     </FormControl>
                     <FormMessage />
@@ -107,7 +104,7 @@ const ContactPage = () => {
                         autoComplete="false"
                         placeholder="johndoe@mail.com"
                         {...field}
-                        disabled= {isPending}
+                        disabled={isPending}
                       />
                     </FormControl>
                     <FormMessage />
