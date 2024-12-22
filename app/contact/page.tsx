@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "motion/react";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -9,7 +9,6 @@ import { SendMailSchema } from "@/schema";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -22,8 +21,8 @@ import { Textarea } from "@/components/ui/textarea";
 // import emailjs from "@emailjs/browser";
 
 const ContactPage = () => {
-  const [success, setSuccess] = useState(false);
-  const [error, setError] = useState(false);
+  // const [success, setSuccess] = useState(false);
+  // const [error, setError] = useState(false);
   const text = "Say Hello";
 
   // const form = useRef<HTMLFormElement>(null);
