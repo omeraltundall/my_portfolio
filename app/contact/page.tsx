@@ -17,7 +17,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { sendMessageWithEmail } from "@/lib/mail";
 
 const ContactPage = () => {
   const [isPending, startTransition] = useTransition();
@@ -31,12 +30,27 @@ const ContactPage = () => {
     },
   });
 
-  const onSubmit = (values: z.infer<typeof SendMailSchema>) => {
-    const mes = `Mail From:${values.email} \nMessage: ${values.message}`;
+  const onSubmit = async (values: z.infer<typeof SendMailSchema>) => {
+    const mes = `Mail From: ${values.email} \nMessage: ${values.message}`;
     console.log(mes);
+
     startTransition(() => {
-      sendMessageWithEmail(values);
-      form.reset();
+      fetch('/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ message: values.message, email: values.email }),
+      })
+        .then((res) => {
+          if (!res.ok) {
+            throw new Error("Failed to send message");
+          }
+          form.reset();
+        })
+        .catch((error) => {
+          console.error(error);
+        });
     });
   };
 
